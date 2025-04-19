@@ -30,8 +30,8 @@ Login Admin
     
     # Input Login Credentials
     Wait Until Element Is Visible    id=email-input
-    Input Text    id=email-input    PhattarapongUknowme@gmail.com
-    Input Password    id=password-input    65041785
+    Input Text    id=email-input    adminMula@gmail.com
+    Input Password    id=password-input    65041788
     Capture Step Screenshot    admin_credentials_entered
     
     # Click Login Button
