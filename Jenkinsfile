@@ -82,6 +82,7 @@ FRONTEND_URL=http://localhost:5173
         stage('Run Robot Tests') {
             steps {
                 sh '''
+                    source $VENV_PATH/bin/activate
                     robot -d $ROBOT_REPORTS_DIR \
                         PositiveSuperAdmin.robot \
                         PositiveBond.robot \
