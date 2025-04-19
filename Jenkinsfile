@@ -79,6 +79,18 @@ FRONTEND_URL=http://localhost:5173
             }
         }
 
+        stage('Wait for Application') {
+            steps {
+                sh '''
+                    echo "Waiting for application to be ready..."
+                    sleep 30
+                    curl -f http://localhost:5173 || exit 1
+                    echo "Checking MongoDB connection..."
+                    docker exec cicd-mongodb-1 mongosh --eval "db.runCommand({ping: 1})" || exit 1
+                '''
+            }
+        }
+
         stage('Run Robot Tests') {
             steps {
                 sh '''
