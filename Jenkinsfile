@@ -2,15 +2,12 @@ pipeline {
     agent any
 
     environment {
-        GIT_REPO = 'https://github.com/Phattarapong26/UknowmeFinal2025.git'
+        GIT_REPO = 'https://github.com/Podvossto/Uknowme-18-4-25.git'
         GIT_BRANCH = 'main'
         PATH = "/usr/local/bin:${env.PATH}"
         APP_PORT = '5173'
         ROBOT_REPORTS_DIR = 'robot-reports'
         VENV_PATH = 'robot-venv'
-        MONGODB_PORT = '27017'
-        MAX_WAIT_TIME = '300' // 5 minutes
-        PYTHON_PATH = '/usr/local/bin/python3'
     }
 
     stages {
@@ -18,26 +15,14 @@ pipeline {
             steps {
                 cleanWs()
                 git branch: "${GIT_BRANCH}",
-                    url: "${GIT_REPO}"
-            }
-        }
-
-        stage('Create Environment File') {
-            steps {
-                sh '''
-                    echo "MONGODB_URI=mongodb://localhost:27017/uknowme" > .env
-                    echo "JWT_SECRET=your_jwt_secret" >> .env
-                    echo "PORT=3000" >> .env
-                    echo "NODE_ENV=development" >> .env
-                    cat .env
-                '''
+                    url: "${GIT_REPO}",
+                    credentialsId: 'git-credentials'
             }
         }
 
         stage('Check Node') {
             steps {
                 sh '''
-                    which node
                     node -v
                     npm -v
                 '''
@@ -47,94 +32,58 @@ pipeline {
         stage('Prepare Test Environment') {
             steps {
                 sh '''
-                    which python3
-                    python3 -m venv ${VENV_PATH} || exit 1
-                    . ${VENV_PATH}/bin/activate
-                    python -m pip install --upgrade pip
-                    pip install --no-cache-dir robotframework robotframework-seleniumlibrary pyotp
+                    python3 -m venv $VENV_PATH
+                    source $VENV_PATH/bin/activate
+                    pip install --upgrade pip
+                    pip install robotframework robotframework-seleniumlibrary pyotp
                 '''
             }
         }
 
         stage('Check Docker') {
             steps {
-                sh '''
-                    which docker
-                    docker info || exit 1
-                '''
+                sh 'docker info'
             }
         }
 
         stage('Clean Up Containers') {
             steps {
-                sh '''
-                    docker-compose down || true
-                    docker system prune -f || true
-                '''
+                sh 'docker-compose down'
+            }
+        }
+
+        stage('Create .env File') {
+            steps {
+                writeFile file: 'Server/.env', text: '''
+MONGODB_URI=mongodb://127.0.0.1:27017/Uknowmedatabase
+PORT=3000
+JWT_SECRET=uknowme
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=UknowmeService@gmail.com
+SMTP_PASS=ldgukmgxnmsrbkkw
+OTP_SECRET=uknowme
+FRONTEND_URL=http://localhost:5173
+'''
             }
         }
 
         stage('Build Docker Images') {
             steps {
-                sh '''
-                    mkdir -p server
-                    cp .env server/.env
-                    docker-compose build --no-cache || exit 1
-                    docker-compose config || exit 1
-                '''
+                sh 'docker-compose build'
             }
         }
 
         stage('Deploy Containers') {
             steps {
-                sh '''
-                    docker-compose up -d
-                    sleep 10
-                '''
-            }
-        }
-
-        stage('Check MongoDB') {
-            steps {
-                sh '''
-                    echo "กำลังตรวจสอบการเชื่อมต่อ MongoDB..."
-                    for i in $(seq 1 30); do
-                        if nc -z localhost ${MONGODB_PORT}; then
-                            echo "MongoDB พร้อมใช้งาน"
-                            exit 0
-                        fi
-                        echo "รอ MongoDB... ($i/30)"
-                        sleep 10
-                    done
-                    echo "ไม่สามารถเชื่อมต่อ MongoDB ได้"
-                    exit 1
-                '''
-            }
-        }
-
-        stage('Wait for Application') {
-            steps {
-                sh '''
-                    echo "กำลังรอให้แอปพลิเคชันพร้อมใช้งาน..."
-                    for i in $(seq 1 30); do
-                        if curl -f http://localhost:${APP_PORT}; then
-                            echo "แอปพลิเคชันพร้อมใช้งาน"
-                            exit 0
-                        fi
-                        echo "รอแอปพลิเคชัน... ($i/30)"
-                        sleep 10
-                    done
-                    echo "ไม่สามารถเชื่อมต่อแอปพลิเคชันได้"
-                    exit 1
-                '''
+                sh 'docker-compose up -d'
             }
         }
 
         stage('Run Robot Tests') {
             steps {
                 sh '''
-                    . ${VENV_PATH}/bin/activate
-                    robot -d ${ROBOT_REPORTS_DIR} \
+                    robot -d $ROBOT_REPORTS_DIR \
                         PositiveSuperAdmin.robot \
                         PositiveBond.robot \
                         PositiveAdmin.robot \
@@ -156,14 +105,11 @@ pipeline {
         success {
             echo "Pipeline สำเร็จ! แอปพลิเคชันกำลังทำงานที่ http://localhost:${APP_PORT}"
             echo "รายงานการทดสอบ Robot Framework อยู่ในโฟลเดอร์ ${ROBOT_REPORTS_DIR}"
-            archiveArtifacts artifacts: 'robot-reports/**/*', allowEmptyArchive: true
         }
         failure {
             echo 'Pipeline ล้มเหลว! กรุณาตรวจสอบบันทึกเพื่อดูรายละเอียด'
-            archiveArtifacts artifacts: 'robot-reports/**/*', allowEmptyArchive: true
         }
         always {
-            sh 'docker-compose down || true'
             cleanWs()
         }
     }
