@@ -22,6 +22,28 @@ pipeline {
             }
         }
 
+        stage('Create Environment File') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        sh '''
+                            echo "MONGODB_URI=mongodb://localhost:27017/uknowme" > .env
+                            echo "JWT_SECRET=your_jwt_secret" >> .env
+                            echo "PORT=3000" >> .env
+                            echo "NODE_ENV=development" >> .env
+                        '''
+                    } else {
+                        bat '''
+                            echo MONGODB_URI=mongodb://localhost:27017/uknowme > .env
+                            echo JWT_SECRET=your_jwt_secret >> .env
+                            echo PORT=3000 >> .env
+                            echo NODE_ENV=development >> .env
+                        '''
+                    }
+                }
+            }
+        }
+
         stage('Check Node') {
             steps {
                 script {
@@ -106,9 +128,15 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh 'docker-compose build --no-cache'
+                        sh '''
+                            docker-compose build --no-cache || exit 1
+                            docker-compose config || exit 1
+                        '''
                     } else {
-                        bat 'docker-compose build --no-cache'
+                        bat '''
+                            docker-compose build --no-cache || exit 1
+                            docker-compose config || exit 1
+                        '''
                     }
                 }
             }
