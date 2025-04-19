@@ -94,12 +94,23 @@ SignIn-SuperAdmin
 
     Wait Until Element Is Visible    id=header-logo-link
     Click Element    id=header-logo-link
-    Input Text    private-key-input    1111111111111111111111111
+    
+    Wait Until Element Is Visible    id=private-key-input
+    Wait Until Element Is Enabled    id=private-key-input
+    Input Text    id=private-key-input    1111111111111111111111111
+    
     Wait Until Element Is Visible    id=submit-private-key-btn
+    Wait Until Element Is Enabled    id=submit-private-key-btn
     Click Element    id=submit-private-key-btn
+    
     ${otp}=    Get Otp    ${SECRET}
+    
+    Wait Until Element Is Visible    id=otp-input
+    Wait Until Element Is Enabled    id=otp-input
     Input Text    id=otp-input    ${otp}
+    
     Wait Until Element Is Visible    id=verify-otp-btn
+    Wait Until Element Is Enabled    id=verify-otp-btn
     Click Element    id=verify-otp-btn
     
     Wait Until Element Is Visible    xpath=//div[contains(@class, 'swal2-popup')]
