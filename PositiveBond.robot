@@ -52,7 +52,7 @@ LogIn
     # Input Login Credentials
     Wait Until Element Is Visible    id=email-input
     Input Text    id=email-input    phattarapong.phe@spumail.net
-    Input Password    id=password-input    1329900959999
+    Input Password    id=password-input    1234567890123
     Capture Step Screenshot    user_credentials_entered
     
     # Click Login Button
