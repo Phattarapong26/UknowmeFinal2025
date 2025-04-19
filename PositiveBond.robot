@@ -2,32 +2,20 @@
 Library    SeleniumLibrary
 Library    OperatingSystem
 Library    DateTime
-Suite Setup    Setup Bond Trader
+Suite Setup    LogIn
 Suite Teardown    Close Browser
 
 *** Variables ***
 ${BROWSER}    chrome
-${URL}    http://localhost:5173
+${URL}    http://localhost:5173/
 ${DELAY}    0
 ${SCREENSHOT_DIR}    screenshots
-${BOND_EMAIL}    phattarapong.phe@spumail.net
-${BOND_PASSWORD}    1329900959999
-${BOND_NAME}    Bond Trader Test
-${BOND_COMPANY}    Test Trading Co.
-${BOND_CITIZEN_ID}    1234567890123
-${BOND_PHONE}    0899999998
-
 *** Keywords ***
 Capture Step Screenshot
     [Arguments]    ${step_name}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     Capture Page Screenshot    ${SCREENSHOT_DIR}/${step_name}_${timestamp}.png
-
-Setup Bond Trader
-    Register Bond Trader
-    LogIn
-
-Register Bond Trader
+Signup
     Open Browser    ${URL}    ${BROWSER}
     Set Selenium Speed    ${DELAY}
     Maximize Browser Window
@@ -36,42 +24,17 @@ Register Bond Trader
 
     Wait Until Element Is Visible    id=signup-btn
     Click Element    id=signup-btn
-    Input Text    id=name-input    ${BOND_NAME}
-    Input Text    id=company-input    ${BOND_COMPANY}
-    Input Text    id=citizen-id-input    ${BOND_CITIZEN_ID}
-    Input Text    id=email-input    ${BOND_EMAIL}
-    Input Text    id=phone-input    ${BOND_PHONE}
-    Input Password    id=password-input    ${BOND_PASSWORD}
-    Wait Until Element Is Visible    id=submit-signup-btn
-    Click Element    id=submit-signup-btn
-    
-    # Handle both success and duplicate registration scenarios
-    Wait Until Element Is Visible    xpath=//div[contains(@class, 'swal2-popup')]
-    ${status}=    Run Keyword And Return Status    Element Should Contain    xpath=//h2[contains(@class, 'swal2-title')]    สมัครสมาชิกสำเร็จ
-    Click Element    xpath=//button[contains(@class, 'swal2-confirm')]
-    Close Browser
-
-Signup New Bond Trader
-    Open Browser    ${URL}    ${BROWSER}
-    Set Selenium Speed    ${DELAY}
-    Maximize Browser Window
-    Wait Until Element Is Visible    id=role-btn-trader
-    Click Element    id=role-btn-trader
-
-    Wait Until Element Is Visible    id=signup-btn
-    Click Element    id=signup-btn
-    Input Text    id=name-input    New Bond Trader
-    Input Text    id=company-input    New Company
-    Input Text    id=citizen-id-input    9876543210155
-    Input Text    id=email-input    newtrader2@uknowme.com
-    Input Text    id=phone-input    0887654321
-    Input Password    id=password-input    Trader5678
+    Input Text    id=name-input    Phattarapong Uknowme
+    Input Text    id=company-input    Uknowme Asset
+    Input Text    id=citizen-id-input    1429900979467
+    Input Text    id=email-input    phattarapong.phe@spumail.net
+    Input Text    id=phone-input    1329900959999
     Wait Until Element Is Visible    id=submit-signup-btn
     Click Element    id=submit-signup-btn
     
     # Confirm Registration Success
     Wait Until Element Is Visible    xpath=//div[contains(@class, 'swal2-popup')]
-    Element Should Contain    xpath=//h2[contains(@class, 'swal2-title')]    สมัครสมาชิกสำเร็จ
+    Element Should Contain    xpath=//h2[contains(@class, 'swal2-title')]    สมัครสมาชิกสำเร็จ!
     Click Element    xpath=//button[contains(@class, 'swal2-confirm')]
     [Teardown]    Close Browser
 
@@ -82,30 +45,29 @@ LogIn
     Capture Step Screenshot    user_login_start
     
     # Select User Role
-    Wait Until Element Is Visible    xpath=//button[contains(@class, 'role-button') and .//span[text()='ผู้ค้าตราสารหนี้']]    timeout=10s
+    Wait Until Element Is Visible    xpath=//button[contains(@class, 'role-button') and .//span[text()='ผู้ค้าตราสารหนี้']]
     Click Element    xpath=//button[contains(@class, 'role-button') and .//span[text()='ผู้ค้าตราสารหนี้']]
     Capture Step Screenshot    user_role_selected
     
     # Input Login Credentials
     Wait Until Element Is Visible    id=email-input
-    Input Text    id=email-input    ${BOND_EMAIL}
-    Input Password    id=password-input    ${BOND_PASSWORD}
+    Input Text    id=email-input    phattarapong.phe@spumail.net
+    Input Password    id=password-input    1329900959999
     Capture Step Screenshot    user_credentials_entered
     
     # Click Login Button
     Click Element    id=login-submit-btn
     
     # Verify Login Success
-    Wait Until Element Is Visible    xpath=//div[contains(@class, 'swal2-popup')]    timeout=10s
+    Wait Until Element Is Visible    xpath=//div[contains(@class, 'swal2-popup')]
     Element Should Contain    xpath=//h2[contains(@class, 'swal2-title')]    เข้าสู่ระบบสำเร็จ!
-    Click Element    xpath=//button[contains(@class, 'swal2-confirm')]
     Capture Step Screenshot    user_login_success
     Homepage
     
 
 Homepage
-    Go To    http://localhost/UserHomepage
-    Sleep    5s 
+    Go To    http://localhost:5173/UserHomepage
+    Sleep    2s 
 
 Profile
     Wait Until Element Is Visible    id=user-menu-btn
