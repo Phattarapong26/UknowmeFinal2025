@@ -188,8 +188,8 @@ TCI018-ลบคอร์ส
     Wait Until Element Is Visible    id=tab-latest
     Click Element    id=tab-latest
 
-    Wait Until Element Is Visible    id=delete-btn-6709c5e9c628150b54faeabd
-    Click Element    id=delete-btn-6709c5e9c628150b54faeabd
+    Wait Until Element Is Visible    xpath=//button[contains(@id, 'delete-btn-')]
+    Click Element    xpath=//button[contains(@id, 'delete-btn-')]
     Wait Until Element Is Visible    xpath=//div[contains(@class, 'swal2-popup')]
     Element Should Contain    xpath=//h2[contains(@class, 'swal2-title')]    ยืนยันการลบคอร์ส
     Click Element    xpath=//button[contains(@class, 'swal2-confirm')]

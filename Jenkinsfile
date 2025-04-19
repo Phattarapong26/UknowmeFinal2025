@@ -8,6 +8,7 @@ pipeline {
         APP_PORT = '5173'
         ROBOT_REPORTS_DIR = 'robot-reports'
         VENV_PATH = 'robot-venv'
+        MONGODB_URI = 'mongodb://127.0.0.1:27017/Uknowmedatabase'
     }
 
     stages {
@@ -54,7 +55,7 @@ pipeline {
         stage('Create .env File') {
             steps {
                 writeFile file: 'Server/.env', text: '''
-MONGODB_URI=mongodb://127.0.0.1:27017/Uknowmedatabase
+MONGODB_URI=${MONGODB_URI}
 PORT=3000
 JWT_SECRET=uknowme
 SMTP_HOST=smtp.gmail.com
