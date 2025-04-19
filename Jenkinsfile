@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        GIT_REPO = 'https://github.com/Podvossto/Uknowme-18-4-25.git'
+        GIT_REPO = 'https://github.com/Phattarapong26/UknowmeFinal2025.git'
         GIT_BRANCH = 'main'
         PATH = "/usr/local/bin:${env.PATH}"
         APP_PORT = '5173'
