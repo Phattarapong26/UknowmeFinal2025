@@ -39,7 +39,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - ./data/mongodb:/data/db
+      - mongodb_data:/data/db
     restart: unless-stopped
     networks:
       - uknowme-network
