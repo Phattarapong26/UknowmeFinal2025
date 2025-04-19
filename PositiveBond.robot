@@ -10,8 +10,8 @@ ${BROWSER}    chrome
 ${URL}    http://localhost:5173
 ${DELAY}    0
 ${SCREENSHOT_DIR}    screenshots
-${BOND_EMAIL}    trader@uknowme.com
-${BOND_PASSWORD}    Trader1234
+${BOND_EMAIL}    phattarapong.phe@spumail.net
+${BOND_PASSWORD}    1329900959999
 ${BOND_NAME}    Bond Trader Test
 ${BOND_COMPANY}    Test Trading Co.
 ${BOND_CITIZEN_ID}    1234567890123

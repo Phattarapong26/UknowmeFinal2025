@@ -7,7 +7,7 @@ Suite Teardown    Close Browser
 
 *** Variables ***
 ${BROWSER}    chrome
-${URL}    http://localhost/
+${URL}    http://localhost:5173
 ${DELAY}    0
 ${SCREENSHOT_DIR}    screenshots
 ${BOND_EMAIL}    trader@uknowme.com

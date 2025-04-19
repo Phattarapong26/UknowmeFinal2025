@@ -12,8 +12,8 @@ ${URL}     http://localhost:5173
 ${DELAY}    0
 ${SCREENSHOT_DIR}    screenshots
 ${SECRET}    32KZ7QO6I5Q6CGI2K3PJQOOFNMYI46ES
-${ADMIN_EMAIL}    admin@uknowme.com
-${ADMIN_PASSWORD}    Admin1234
+${ADMIN_EMAIL}    PhattarapongUknowme@gmail.com
+${ADMIN_PASSWORD}    65041785
 
 *** Keywords ***
 Capture Step Screenshot

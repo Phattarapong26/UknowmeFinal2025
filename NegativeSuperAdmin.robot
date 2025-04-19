@@ -6,7 +6,7 @@ Library    OtpLibrary.py
 
 *** Variables ***
 ${BROWSER}    chrome
-${URL}    http://localhost/
+${URL}    http://localhost:5173
 ${DELAY}    0
 ${SCREENSHOT_DIR}    screenshots
 ${SECRET}    32KZ7QO6I5Q6CGI2K3PJQOOFNMYI46ES
