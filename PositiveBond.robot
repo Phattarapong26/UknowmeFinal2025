@@ -62,8 +62,8 @@ Signup New Bond Trader
     Click Element    id=signup-btn
     Input Text    id=name-input    New Bond Trader
     Input Text    id=company-input    New Company
-    Input Text    id=citizen-id-input    9876543210123
-    Input Text    id=email-input    newtrader@uknowme.com
+    Input Text    id=citizen-id-input    9876543210155
+    Input Text    id=email-input    newtrader2@uknowme.com
     Input Text    id=phone-input    0887654321
     Input Password    id=password-input    Trader5678
     Wait Until Element Is Visible    id=submit-signup-btn
@@ -97,7 +97,7 @@ LogIn
     
     # Verify Login Success
     Wait Until Element Is Visible    xpath=//div[contains(@class, 'swal2-popup')]    timeout=10s
-    Element Should Contain    xpath=//h2[contains(@class, 'swal2-title')]    ล็อกอินสำเร็จ
+    Element Should Contain    xpath=//h2[contains(@class, 'swal2-title')]    เข้าสู่ระบบสำเร็จ!
     Click Element    xpath=//button[contains(@class, 'swal2-confirm')]
     Capture Step Screenshot    user_login_success
     Homepage

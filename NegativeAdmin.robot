@@ -118,7 +118,7 @@ Login Admin
     
     # Verify Login Success
     Wait Until Element Is Visible    xpath=//div[contains(@class, 'swal2-popup')]    timeout=10s
-    Element Should Contain    xpath=//h2[contains(@class, 'swal2-title')]    ล็อกอินสำเร็จ
+    Element Should Contain    xpath=//h2[contains(@class, 'swal2-title')]    เข้าสู่ระบบสำเร็จ!
     Capture Step Screenshot    admin_login_success
 
 DashboardAdmin

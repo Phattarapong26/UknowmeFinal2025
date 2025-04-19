@@ -11,7 +11,7 @@ ${BROWSER}    chrome
 ${URL}     http://localhost:5173
 ${DELAY}    0
 ${SCREENSHOT_DIR}    screenshots
-${SECRET}    32KZ7QO6I5Q6CGI2K3PJQOOFNMYI46ES
+${SECRET}   JMQUQZJFKBKEU4LXKVFG4OK5OMVE6N3IJR2VCWDXIFAXQOLYHAXQ
 ${ADMIN_EMAIL}    PhattarapongUknowme@gmail.com
 ${ADMIN_PASSWORD}    65041785
 
@@ -79,7 +79,7 @@ SignIn-SuperAdmin
     
     # Verify Login Success
     Wait Until Element Is Visible    xpath=//div[contains(@class, 'swal2-popup')]
-    Element Should Contain    xpath=//h2[contains(@class, 'swal2-title')]    ล็อกอินสำเร็จ
+    Element Should Contain    xpath=//h2[contains(@class, 'swal2-title')]    เข้าสู่ระบบสำเร็จ!
     Click Element    xpath=//button[contains(@class, 'swal2-confirm')]
     Capture Step Screenshot    admin_login_success
 
