@@ -25,12 +25,10 @@ pipeline {
         stage('Create Environment File') {
             steps {
                 sh '''
-                    cat > .env << EOL
-                    MONGODB_URI=mongodb://localhost:27017/uknowme
-                    JWT_SECRET=your_jwt_secret
-                    PORT=3000
-                    NODE_ENV=development
-                    EOL
+                    echo "MONGODB_URI=mongodb://localhost:27017/uknowme" > .env
+                    echo "JWT_SECRET=your_jwt_secret" >> .env
+                    echo "PORT=3000" >> .env
+                    echo "NODE_ENV=development" >> .env
                     cat .env
                 '''
             }
@@ -79,6 +77,7 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 sh '''
+                    mkdir -p server
                     cp .env server/.env
                     docker-compose build --no-cache || exit 1
                     docker-compose config || exit 1
