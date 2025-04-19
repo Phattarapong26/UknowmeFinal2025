@@ -15,8 +15,7 @@ pipeline {
             steps {
                 cleanWs()
                 git branch: "${GIT_BRANCH}",
-                    url: "${GIT_REPO}",
-                    credentialsId: 'git-credentials'
+                    url: "${GIT_REPO}"
             }
         }
 
