@@ -10,6 +10,7 @@ pipeline {
         VENV_PATH = 'robot-venv'
         MONGODB_PORT = '27017'
         MAX_WAIT_TIME = '300' // 5 minutes
+        PYTHON_PATH = '/usr/local/bin/python3'
     }
 
     stages {
@@ -17,8 +18,7 @@ pipeline {
             steps {
                 cleanWs()
                 git branch: "${GIT_BRANCH}",
-                    url: "${GIT_REPO}",
-                    credentialsId: 'git-credentials'
+                    url: "${GIT_REPO}"
             }
         }
 
@@ -27,11 +27,13 @@ pipeline {
                 script {
                     if (isUnix()) {
                         sh '''
+                            which node
                             node -v
                             npm -v
                         '''
                     } else {
                         bat '''
+                            where node
                             node -v
                             npm -v
                         '''
@@ -45,17 +47,19 @@ pipeline {
                 script {
                     if (isUnix()) {
                         sh '''
-                            python3 -m venv ${VENV_PATH}
+                            which python3
+                            python3 -m venv ${VENV_PATH} || exit 1
                             . ${VENV_PATH}/bin/activate
-                            pip install --upgrade pip
-                            pip install robotframework robotframework-seleniumlibrary pyotp
+                            python -m pip install --upgrade pip
+                            pip install --no-cache-dir robotframework robotframework-seleniumlibrary pyotp
                         '''
                     } else {
                         bat '''
-                            python -m venv %VENV_PATH%
+                            where python
+                            python -m venv %VENV_PATH% || exit 1
                             call %VENV_PATH%\\Scripts\\activate
-                            pip install --upgrade pip
-                            pip install robotframework robotframework-seleniumlibrary pyotp
+                            python -m pip install --upgrade pip
+                            pip install --no-cache-dir robotframework robotframework-seleniumlibrary pyotp
                         '''
                     }
                 }
@@ -66,9 +70,15 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh 'docker info'
+                        sh '''
+                            which docker
+                            docker info || exit 1
+                        '''
                     } else {
-                        bat 'docker info'
+                        bat '''
+                            where docker
+                            docker info || exit 1
+                        '''
                     }
                 }
             }
@@ -78,9 +88,15 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh 'docker-compose down'
+                        sh '''
+                            docker-compose down || true
+                            docker system prune -f || true
+                        '''
                     } else {
-                        bat 'docker-compose down'
+                        bat '''
+                            docker-compose down || exit 0
+                            docker system prune -f || exit 0
+                        '''
                     }
                 }
             }
@@ -90,9 +106,9 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh 'docker-compose build'
+                        sh 'docker-compose build --no-cache'
                     } else {
-                        bat 'docker-compose build'
+                        bat 'docker-compose build --no-cache'
                     }
                 }
             }
@@ -102,9 +118,89 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh 'docker-compose up -d'
+                        sh '''
+                            docker-compose up -d
+                            sleep 10
+                        '''
                     } else {
-                        bat 'docker-compose up -d'
+                        bat '''
+                            docker-compose up -d
+                            timeout /t 10
+                        '''
+                    }
+                }
+            }
+        }
+
+        stage('Check MongoDB') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        sh '''
+                            echo "กำลังตรวจสอบการเชื่อมต่อ MongoDB..."
+                            for i in $(seq 1 30); do
+                                if nc -z localhost ${MONGODB_PORT}; then
+                                    echo "MongoDB พร้อมใช้งาน"
+                                    exit 0
+                                fi
+                                echo "รอ MongoDB... ($i/30)"
+                                sleep 10
+                            done
+                            echo "ไม่สามารถเชื่อมต่อ MongoDB ได้"
+                            exit 1
+                        '''
+                    } else {
+                        bat '''
+                            echo "กำลังตรวจสอบการเชื่อมต่อ MongoDB..."
+                            for /l %%i in (1,1,30) do (
+                                curl -f telnet://localhost:%MONGODB_PORT% && (
+                                    echo MongoDB พร้อมใช้งาน
+                                    exit /b 0
+                                ) || (
+                                    echo รอ MongoDB... (%%i/30)
+                                    timeout /t 10 /nobreak
+                                )
+                            )
+                            echo ไม่สามารถเชื่อมต่อ MongoDB ได้
+                            exit /b 1
+                        '''
+                    }
+                }
+            }
+        }
+
+        stage('Wait for Application') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        sh '''
+                            echo "กำลังรอให้แอปพลิเคชันพร้อมใช้งาน..."
+                            for i in $(seq 1 30); do
+                                if curl -f http://localhost:${APP_PORT}; then
+                                    echo "แอปพลิเคชันพร้อมใช้งาน"
+                                    exit 0
+                                fi
+                                echo "รอแอปพลิเคชัน... ($i/30)"
+                                sleep 10
+                            done
+                            echo "ไม่สามารถเชื่อมต่อแอปพลิเคชันได้"
+                            exit 1
+                        '''
+                    } else {
+                        bat '''
+                            echo "กำลังรอให้แอปพลิเคชันพร้อมใช้งาน..."
+                            for /l %%i in (1,1,30) do (
+                                curl -f http://localhost:%APP_PORT% && (
+                                    echo แอปพลิเคชันพร้อมใช้งาน
+                                    exit /b 0
+                                ) || (
+                                    echo รอแอปพลิเคชัน... (%%i/30)
+                                    timeout /t 10 /nobreak
+                                )
+                            )
+                            echo ไม่สามารถเชื่อมต่อแอปพลิเคชันได้
+                            exit /b 1
+                        '''
                     }
                 }
             }
@@ -115,6 +211,7 @@ pipeline {
                 script {
                     if (isUnix()) {
                         sh '''
+                            . ${VENV_PATH}/bin/activate
                             robot -d ${ROBOT_REPORTS_DIR} \
                                 PositiveSuperAdmin.robot \
                                 PositiveBond.robot \
@@ -125,6 +222,7 @@ pipeline {
                         '''
                     } else {
                         bat '''
+                            call %VENV_PATH%\\Scripts\\activate
                             robot -d %ROBOT_REPORTS_DIR% \
                                 PositiveSuperAdmin.robot \
                                 PositiveBond.robot \
@@ -149,46 +247,6 @@ pipeline {
                 }
             }
         }
-
-        stage('Check MongoDB') {
-            steps {
-                script {
-                    if (isUnix()) {
-                        sh '''
-                            echo "กำลังตรวจสอบการเชื่อมต่อ MongoDB..."
-                            timeout ${MAX_WAIT_TIME}
-                            nc -z localhost ${MONGODB_PORT} || exit 1
-                        '''
-                    } else {
-                        bat '''
-                            echo "กำลังตรวจสอบการเชื่อมต่อ MongoDB..."
-                            timeout %MAX_WAIT_TIME% /t
-                            curl -f telnet://localhost:%MONGODB_PORT% || exit 1
-                        '''
-                    }
-                }
-            }
-        }
-
-        stage('Wait for Application') {
-            steps {
-                script {
-                    if (isUnix()) {
-                        sh '''
-                            echo "กำลังรอให้แอปพลิเคชันพร้อมใช้งาน..."
-                            timeout ${MAX_WAIT_TIME}
-                            curl -f http://localhost:${APP_PORT} || exit 1
-                        '''
-                    } else {
-                        bat '''
-                            echo "กำลังรอให้แอปพลิเคชันพร้อมใช้งาน..."
-                            timeout %MAX_WAIT_TIME% /t
-                            curl -f http://localhost:%APP_PORT% || exit 1
-                        '''
-                    }
-                }
-            }
-        }
     }
 
     post {
@@ -202,6 +260,13 @@ pipeline {
             archiveArtifacts artifacts: 'robot-reports/**/*', allowEmptyArchive: true
         }
         always {
+            script {
+                if (isUnix()) {
+                    sh 'docker-compose down || true'
+                } else {
+                    bat 'docker-compose down || exit 0'
+                }
+            }
             cleanWs()
         }
     }
