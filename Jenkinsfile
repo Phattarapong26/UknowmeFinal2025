@@ -2,12 +2,14 @@ pipeline {
     agent any
 
     environment {
-        GIT_REPO = 'https://github.com/Podvossto/Uknowme-18-4-25.git'
+        GIT_REPO = 'https://github.com/Phattarapong26/UknowmeFinal2025.git'
         GIT_BRANCH = 'main'
         PATH = "/usr/local/bin:${env.PATH}"
         APP_PORT = '5173'
         ROBOT_REPORTS_DIR = 'robot-reports'
         VENV_PATH = 'robot-venv'
+        MONGODB_PORT = '27017'
+        MAX_WAIT_TIME = '300' // 5 minutes
     }
 
     stages {
@@ -52,21 +54,6 @@ pipeline {
             }
         }
 
-        stage('Create .env File') {
-            steps {
-                writeFile file: 'Server/.env', text: '''
-MONGODB_URI=mongodb://127.0.0.1:27017/Uknowmedatabase
-PORT=3000
-JWT_SECRET=uknowme
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=UknowmeService@gmail.com
-SMTP_PASS=ldgukmgxnmsrbkkw
-OTP_SECRET=uknowme
-FRONTEND_URL=http://localhost:5173
-'''
-            }
-        }
 
         stage('Build Docker Images') {
             steps {
@@ -99,15 +86,37 @@ FRONTEND_URL=http://localhost:5173
                 bat 'docker-compose logs --tail=50'
             }
         }
+
+        stage('Check MongoDB') {
+            steps {
+                bat '''
+                    echo "กำลังตรวจสอบการเชื่อมต่อ MongoDB..."
+                    timeout %MAX_WAIT_TIME% /t
+                    curl -f telnet://localhost:%MONGODB_PORT% || exit 1
+                '''
+            }
+        }
+
+        stage('Wait for Application') {
+            steps {
+                bat '''
+                    echo "กำลังรอให้แอปพลิเคชันพร้อมใช้งาน..."
+                    timeout %MAX_WAIT_TIME% /t
+                    curl -f http://localhost:%APP_PORT% || exit 1
+                '''
+            }
+        }
     }
 
     post {
         success {
             echo "Pipeline สำเร็จ! แอปพลิเคชันกำลังทำงานที่ http://localhost:${APP_PORT}"
             echo "รายงานการทดสอบ Robot Framework อยู่ในโฟลเดอร์ ${ROBOT_REPORTS_DIR}"
+            archiveArtifacts artifacts: 'robot-reports/**/*', allowEmptyArchive: true
         }
         failure {
             echo 'Pipeline ล้มเหลว! กรุณาตรวจสอบบันทึกเพื่อดูรายละเอียด'
+            archiveArtifacts artifacts: 'robot-reports/**/*', allowEmptyArchive: true
         }
         always {
             cleanWs()
