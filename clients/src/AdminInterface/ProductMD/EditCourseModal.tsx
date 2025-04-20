@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Save, X } from 'lucide-react';
+import { useAuth } from '../../hooks/useAuth';
 
 const API_CONFIG = {
   baseUrl: 'http://localhost:3000',
@@ -36,10 +37,7 @@ const EditCourseModal: React.FC<EditCourseModalProps> = ({ isOpen, onClose, onSu
   const [courseData, setCourseData] = useState<CourseData>(course);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const token = localStorage.getItem('token');
-  if (!token) {
-    throw new Error('No authentication token found');
-  }
+  const { token } = useAuth();
 
   useEffect(() => {
     setCourseData(course);
@@ -63,10 +61,10 @@ const EditCourseModal: React.FC<EditCourseModalProps> = ({ isOpen, onClose, onSu
     setError(null);
 
     try {
-      const token = localStorage.getItem('jwtToken');
-
       if (!token) {
-        throw new Error('ไม่พบโทเค็นการยืนยันตัวตน กรุณาเข้าสู่ระบบใหม่');
+        setError('ไม่พบโทเค็นการยืนยันตัวตน กรุณาเข้าสู่ระบบใหม่');
+        setIsLoading(false);
+        return;
       }
 
       const formData = new FormData();
