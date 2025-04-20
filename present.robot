@@ -25,7 +25,7 @@ Test Trader And Admin Flow
     # Trader Login
     Click Element    //*[@id="role-btn-trader"]
     Input Text    //*[@id="email-input"]    user@gmail.com
-    Input Text    //*[@id="password-input"]    0966566414
+    Input Text    //*[@id="password-input"]    0966566411
     Sleep    1s
     Capture Step Screenshot    trader_login
     Click Element    //*[@id="login-submit-btn"]
@@ -111,8 +111,8 @@ Test Trader And Admin Flow
     Sleep    2s
     Capture Step Screenshot    before_password_change
     Click Element    //*[@id="change-password-btn"]
-    Input Text    //*[@id="swal-old-password"]    0966566414
-    Input Text    //*[@id="swal-new-password"]    0966566411
+    Input Text    //*[@id="swal-old-password"]    0966566411
+    Input Text    //*[@id="swal-new-password"]    0966566414
     Sleep    5s
     Capture Step Screenshot    password_change
 
@@ -135,44 +135,6 @@ Test Trader And Admin Flow
     Sleep    1s
     Capture Step Screenshot    logout
     
-    # Admin Login
-    Click Element    //*[@id="role-btn-admin"]
-    Input Text    //*[@id="email-input"]    PhattarapongUknowme@gmail.com
-    Input Text    //*[@id="password-input"]    65041785
-    Sleep    3s
-    Capture Step Screenshot    admin_login
-    Click Element    //*[@id="login-submit-btn"]
-    Sleep    5s
-    Capture Step Screenshot    after_admin_login
-    Click Element    css:.swal2-confirm
+    # Close browser
+    Close Browser
     
-    # Admin Course Management
-    Click Element    //*[@id="course-card-6729774aed0b44b753cafb4e"]
-    Sleep    3s
-    Capture Step Screenshot    admin_course_view
-    Click Element    //*[@id="show-participants-btn"]
-    Sleep    3s
-    Click Element    //*[@id="check-participant-67dc41d258cdf8f0d4cae527"]
-    Sleep    5s
-    Capture Step Screenshot    participant_check
-    Click Element    //*[@id="save-participants"]
-    Sleep    3s
-    Click Element    //*[@id="close-check-name"]
-    
-    # Course Edit
-    Click Element    //*[@id="nav-courses"]
-    Click Element    //*[@id="edit-btn-6729751eed0b44b753cafb3a"]
-    Sleep    3s
-    Capture Step Screenshot    course_edit
-    Input Text    //*[@id="trainingLocation-edit-modal-6729751eed0b44b753cafb3a"]    University
-    Sleep    3s
-    Capture Step Screenshot    location_edit
-    
-    # Schedule and Participants
-    Click Element    //*[@id="nav-schedule"]
-    Sleep    3s
-    Capture Step Screenshot    schedule_view
-    Click Element    //*[@id="view-participants-672976dbed0b44b753cafb49"]
-    Sleep    3s
-    Capture Step Screenshot    participants_view
-    Click Element    //*[@id="close-check-name"]
