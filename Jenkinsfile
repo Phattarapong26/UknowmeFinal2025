@@ -97,12 +97,7 @@ FRONTEND_URL=http://localhost:5173
                 sh '''
                     source $VENV_PATH/bin/activate
                     robot -d $ROBOT_REPORTS_DIR \
-                        PositiveSuperAdmin.robot \
-                        PositiveBond.robot \
-                        PositiveAdmin.robot \
-                        NegativeSuperAdmin.robot \
-                        NegativeBond.robot \
-                        NegativeAdmin.robot
+                        present.robot
                 '''
             }
         }
