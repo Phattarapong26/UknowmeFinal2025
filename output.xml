@@ -1,913 +1,945 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-04-20T21:00:49.163311" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-04-20T21:35:33.532348" rpa="false" schemaversion="5">
 <suite id="s1" name="Present" source="/Users/medlab/Desktop/untitled folder 2/UknowmeFinal2025/present.robot">
 <test id="s1-t1" name="Test Trader And Admin Flow" line="20">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:00:49.751654" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/'.</msg>
+<msg time="2025-04-20T21:35:33.875266" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-04-20T21:00:49.751167" elapsed="2.768642"/>
+<status status="PASS" start="2025-04-20T21:35:33.874715" elapsed="3.944623"/>
 </kw>
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>${DELAY}</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2025-04-20T21:00:52.528828" elapsed="0.000932"/>
+<status status="PASS" start="2025-04-20T21:35:37.820423" elapsed="0.000643"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-04-20T21:00:52.530191" elapsed="2.549710"/>
+<status status="PASS" start="2025-04-20T21:35:37.821280" elapsed="0.433932"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:00:55.081813" level="INFO">Clicking element '//*[@id="role-btn-trader"]'.</msg>
+<msg time="2025-04-20T21:35:38.256183" level="INFO">Clicking element '//*[@id="role-btn-trader"]'.</msg>
 <arg>//*[@id="role-btn-trader"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:00:55.080345" elapsed="0.165573"/>
+<status status="PASS" start="2025-04-20T21:35:38.255608" elapsed="0.119199"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:00:55.246477" level="INFO">Typing text 'phattarapong.phe@spumail.net' into text field '//*[@id="email-input"]'.</msg>
+<msg time="2025-04-20T21:35:38.375624" level="INFO">Typing text 'user@gmail.com' into text field '//*[@id="email-input"]'.</msg>
 <arg>//*[@id="email-input"]</arg>
-<arg>phattarapong.phe@spumail.net</arg>
+<arg>user@gmail.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:00:55.246218" elapsed="0.402050"/>
+<status status="PASS" start="2025-04-20T21:35:38.375380" elapsed="0.314001"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:00:55.649226" level="INFO">Typing text '1329900959999' into text field '//*[@id="password-input"]'.</msg>
+<msg time="2025-04-20T21:35:38.690224" level="INFO">Typing text '0966566414' into text field '//*[@id="password-input"]'.</msg>
 <arg>//*[@id="password-input"]</arg>
-<arg>1329900959999</arg>
+<arg>0966566414</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:00:55.648708" elapsed="0.125055"/>
+<status status="PASS" start="2025-04-20T21:35:38.689817" elapsed="0.101189"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:00:56.776590" level="INFO">Slept 1 second.</msg>
+<msg time="2025-04-20T21:35:39.794115" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:00:55.774236" elapsed="1.002620"/>
+<status status="PASS" start="2025-04-20T21:35:38.791451" elapsed="1.002878"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-04-20T21:00:56.780186" level="INFO">${timestamp} = 20250420_210056</msg>
+<msg time="2025-04-20T21:35:39.797526" level="INFO">${timestamp} = 20250420_213539</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-04-20T21:00:56.779173" elapsed="0.001096"/>
+<status status="PASS" start="2025-04-20T21:35:39.796155" elapsed="0.001499"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:00:57.097260" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/trader_login_20250420_210056.png"&gt;&lt;img src="screenshots/trader_login_20250420_210056.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:35:40.108773" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/trader_login_20250420_213539.png"&gt;&lt;img src="screenshots/trader_login_20250420_213539.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-04-20T21:00:56.780561" elapsed="0.316872"/>
+<status status="PASS" start="2025-04-20T21:35:39.798029" elapsed="0.310847"/>
 </kw>
 <arg>trader_login</arg>
-<status status="PASS" start="2025-04-20T21:00:56.778103" elapsed="0.319456"/>
+<status status="PASS" start="2025-04-20T21:35:39.795298" elapsed="0.313694"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:00:57.097952" level="INFO">Clicking element '//*[@id="login-submit-btn"]'.</msg>
+<msg time="2025-04-20T21:35:40.109405" level="INFO">Clicking element '//*[@id="login-submit-btn"]'.</msg>
 <arg>//*[@id="login-submit-btn"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:00:57.097764" elapsed="0.069701"/>
+<status status="PASS" start="2025-04-20T21:35:40.109208" elapsed="0.072350"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:00:58.173734" level="INFO">Slept 1 second.</msg>
+<msg time="2025-04-20T21:35:41.184898" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:00:57.167829" elapsed="1.006270"/>
+<status status="PASS" start="2025-04-20T21:35:40.182731" elapsed="1.002692"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-04-20T21:00:58.175776" level="INFO">${timestamp} = 20250420_210058</msg>
+<msg time="2025-04-20T21:35:41.186918" level="INFO">${timestamp} = 20250420_213541</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-04-20T21:00:58.175202" elapsed="0.000654"/>
+<status status="PASS" start="2025-04-20T21:35:41.186519" elapsed="0.000549"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:00:58.536030" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/after_login_20250420_210058.png"&gt;&lt;img src="screenshots/after_login_20250420_210058.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:35:41.530388" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/after_login_20250420_213541.png"&gt;&lt;img src="screenshots/after_login_20250420_213541.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-04-20T21:00:58.176109" elapsed="0.360033"/>
+<status status="PASS" start="2025-04-20T21:35:41.187321" elapsed="0.343166"/>
 </kw>
 <arg>after_login</arg>
-<status status="PASS" start="2025-04-20T21:00:58.174675" elapsed="0.361630"/>
+<status status="PASS" start="2025-04-20T21:35:41.185889" elapsed="0.344701"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>xpath=//div[contains(@class, 'swal2-popup')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-04-20T21:00:58.536606" elapsed="0.023145"/>
+<status status="PASS" start="2025-04-20T21:35:41.530792" elapsed="0.017892"/>
 </kw>
 <kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:00:58.583950" level="INFO">Element 'xpath=//h2[contains(@class, 'swal2-title')]' contains text 'เข้าสู่ระบบสำเร็จ!'.</msg>
+<msg time="2025-04-20T21:35:41.567569" level="INFO">Element 'xpath=//h2[contains(@class, 'swal2-title')]' contains text 'เข้าสู่ระบบสำเร็จ!'.</msg>
 <arg>xpath=//h2[contains(@class, 'swal2-title')]</arg>
 <arg>เข้าสู่ระบบสำเร็จ!</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2025-04-20T21:00:58.560047" elapsed="0.023998"/>
+<status status="PASS" start="2025-04-20T21:35:41.548939" elapsed="0.018731"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-04-20T21:00:58.585333" level="INFO">${timestamp} = 20250420_210058</msg>
+<msg time="2025-04-20T21:35:41.568439" level="INFO">${timestamp} = 20250420_213541</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-04-20T21:00:58.584942" elapsed="0.000427"/>
+<status status="PASS" start="2025-04-20T21:35:41.568209" elapsed="0.000262"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:00:58.913783" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/user_login_success_20250420_210058.png"&gt;&lt;img src="screenshots/user_login_success_20250420_210058.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:35:41.860865" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/user_login_success_20250420_213541.png"&gt;&lt;img src="screenshots/user_login_success_20250420_213541.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-04-20T21:00:58.585552" elapsed="0.328342"/>
+<status status="PASS" start="2025-04-20T21:35:41.568586" elapsed="0.292403"/>
 </kw>
 <arg>user_login_success</arg>
-<status status="PASS" start="2025-04-20T21:00:58.584399" elapsed="0.329601"/>
+<status status="PASS" start="2025-04-20T21:35:41.567918" elapsed="0.293171"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:00:58.914412" level="INFO">Clicking element 'css:.swal2-confirm'.</msg>
+<msg time="2025-04-20T21:35:41.861666" level="INFO">Clicking element 'css:.swal2-confirm'.</msg>
 <arg>css:.swal2-confirm</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:00:58.914225" elapsed="0.134389"/>
+<status status="PASS" start="2025-04-20T21:35:41.861366" elapsed="0.116094"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:00:59.055770" level="INFO">Executing JavaScript:
+<msg time="2025-04-20T21:35:41.979194" level="INFO">Executing JavaScript:
 window.scrollTo(0, document.body.scrollHeight)
 Without any arguments.</msg>
 <arg>window.scrollTo(0, document.body.scrollHeight)</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-04-20T21:00:59.049249" elapsed="0.115368"/>
+<status status="PASS" start="2025-04-20T21:35:41.977937" elapsed="0.011382"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:00.166418" level="INFO">Slept 1 second.</msg>
+<msg time="2025-04-20T21:35:42.990404" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:00:59.164993" elapsed="1.001717"/>
+<status status="PASS" start="2025-04-20T21:35:41.989647" elapsed="1.000868"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:00.176117" level="INFO">Executing JavaScript:
+<msg time="2025-04-20T21:35:42.992044" level="INFO">Executing JavaScript:
 window.scrollTo(0, 0)
 Without any arguments.</msg>
 <arg>window.scrollTo(0, 0)</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-04-20T21:01:00.167427" elapsed="0.015088"/>
+<status status="PASS" start="2025-04-20T21:35:42.990790" elapsed="0.005187"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:01.183638" level="INFO">Slept 1 second.</msg>
+<msg time="2025-04-20T21:35:43.996869" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:00.182804" elapsed="1.001434"/>
+<status status="PASS" start="2025-04-20T21:35:42.996190" elapsed="1.000951"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:01.203848" level="INFO">${slider} = &lt;selenium.webdriver.remote.webelement.WebElement (session="0f98b6a075f420261b957e4c7105c54c", element="f.8DE97717AA93FBA67A74F2EB3A41CB94.d.2117CD2E8EA3FF1B50994C544D94192A.e.53")&gt;</msg>
+<msg time="2025-04-20T21:35:44.017454" level="INFO">${slider} = &lt;selenium.webdriver.remote.webelement.WebElement (session="0e5927e63df426f1fae010d1d0970724", element="f.D048B8E271EF8E9E08A05621271ED267.d.0D4F23EDFD9955FE4486A0B174E7CB74.e.48")&gt;</msg>
 <var>${slider}</var>
 <arg>//*[@id="main-content"]</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:01.185674" elapsed="0.018238"/>
+<status status="PASS" start="2025-04-20T21:35:43.997764" elapsed="0.019752"/>
 </kw>
 <kw name="Drag And Drop By Offset" owner="SeleniumLibrary">
 <arg>${slider}</arg>
 <arg>500</arg>
 <arg>0</arg>
 <doc>Drags the element identified with ``locator`` by ``xoffset/yoffset``.</doc>
-<status status="PASS" start="2025-04-20T21:01:01.204177" elapsed="0.551563"/>
+<status status="PASS" start="2025-04-20T21:35:44.017774" elapsed="0.544355"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:02.757202" level="INFO">Slept 1 second.</msg>
+<msg time="2025-04-20T21:35:45.564786" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:01.756367" elapsed="1.001032"/>
+<status status="PASS" start="2025-04-20T21:35:44.562526" elapsed="1.002692"/>
 </kw>
 <kw name="Drag And Drop By Offset" owner="SeleniumLibrary">
 <arg>${slider}</arg>
 <arg>-500</arg>
 <arg>0</arg>
 <doc>Drags the element identified with ``locator`` by ``xoffset/yoffset``.</doc>
-<status status="PASS" start="2025-04-20T21:01:02.757798" elapsed="0.529648"/>
+<status status="PASS" start="2025-04-20T21:35:45.565896" elapsed="0.531643"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:04.288690" level="INFO">Slept 1 second.</msg>
+<msg time="2025-04-20T21:35:47.099607" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:03.287884" elapsed="1.001045"/>
+<status status="PASS" start="2025-04-20T21:35:46.098314" elapsed="1.001414"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:04.289703" level="INFO">Clicking element '//*[@id="course-card-6729774aed0b44b753cafb4e"]'.</msg>
+<msg time="2025-04-20T21:35:47.100391" level="INFO">Clicking element '//*[@id="course-card-6729774aed0b44b753cafb4e"]'.</msg>
 <arg>//*[@id="course-card-6729774aed0b44b753cafb4e"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:04.289345" elapsed="0.065789"/>
+<status status="PASS" start="2025-04-20T21:35:47.100137" elapsed="0.058820"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:05.429303" level="INFO">Slept 1 second.</msg>
+<msg time="2025-04-20T21:35:48.160387" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:04.355627" elapsed="1.074321"/>
+<status status="PASS" start="2025-04-20T21:35:47.159275" elapsed="1.001360"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-04-20T21:01:05.436095" level="INFO">${timestamp} = 20250420_210105</msg>
+<msg time="2025-04-20T21:35:48.162282" level="INFO">${timestamp} = 20250420_213548</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-04-20T21:01:05.435394" elapsed="0.000829"/>
+<status status="PASS" start="2025-04-20T21:35:48.161914" elapsed="0.000427"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:06.151272" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/course_selection_20250420_210105.png"&gt;&lt;img src="screenshots/course_selection_20250420_210105.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:35:48.564559" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/course_selection_20250420_213548.png"&gt;&lt;img src="screenshots/course_selection_20250420_213548.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-04-20T21:01:05.438556" elapsed="0.712873"/>
+<status status="PASS" start="2025-04-20T21:35:48.162650" elapsed="0.402041"/>
 </kw>
 <arg>course_selection</arg>
-<status status="PASS" start="2025-04-20T21:01:05.431343" elapsed="0.720228"/>
+<status status="PASS" start="2025-04-20T21:35:48.161130" elapsed="0.403676"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:06.152146" level="INFO">Clicking element '//*[@id="register-course-btn"]'.</msg>
+<msg time="2025-04-20T21:35:48.565368" level="INFO">Clicking element '//*[@id="register-course-btn"]'.</msg>
 <arg>//*[@id="register-course-btn"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:06.151803" elapsed="0.121797"/>
+<status status="PASS" start="2025-04-20T21:35:48.565129" elapsed="0.108348"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:07.275161" level="INFO">Slept 1 second.</msg>
+<msg time="2025-04-20T21:35:49.675479" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:06.273946" elapsed="1.001508"/>
+<status status="PASS" start="2025-04-20T21:35:48.673898" elapsed="1.001755"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-04-20T21:01:07.279618" level="INFO">${timestamp} = 20250420_210107</msg>
+<msg time="2025-04-20T21:35:49.677979" level="INFO">${timestamp} = 20250420_213549</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-04-20T21:01:07.279224" elapsed="0.000501"/>
+<status status="PASS" start="2025-04-20T21:35:49.677415" elapsed="0.000632"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:07.682146" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/course_registration_20250420_210107.png"&gt;&lt;img src="screenshots/course_registration_20250420_210107.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:35:50.144690" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/course_registration_20250420_213549.png"&gt;&lt;img src="screenshots/course_registration_20250420_213549.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-04-20T21:01:07.280057" elapsed="0.402297"/>
+<status status="PASS" start="2025-04-20T21:35:49.678288" elapsed="0.466566"/>
 </kw>
 <arg>course_registration</arg>
-<status status="PASS" start="2025-04-20T21:01:07.278450" elapsed="0.404107"/>
+<status status="PASS" start="2025-04-20T21:35:49.676081" elapsed="0.468974"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:07.683132" level="INFO">Clicking element 'css:.swal2-confirm'.</msg>
+<msg time="2025-04-20T21:35:50.145895" level="INFO">Clicking element 'css:.swal2-confirm'.</msg>
 <arg>css:.swal2-confirm</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:07.682863" elapsed="0.062816"/>
+<status status="PASS" start="2025-04-20T21:35:50.145650" elapsed="0.119114"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:08.746429" level="INFO">Slept 1 second.</msg>
+<msg time="2025-04-20T21:35:51.267981" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:07.745982" elapsed="1.000767"/>
+<status status="PASS" start="2025-04-20T21:35:50.265419" elapsed="1.002775"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-04-20T21:01:08.747812" level="INFO">${timestamp} = 20250420_210108</msg>
+<msg time="2025-04-20T21:35:51.270574" level="INFO">${timestamp} = 20250420_213551</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-04-20T21:01:08.747590" elapsed="0.000258"/>
+<status status="PASS" start="2025-04-20T21:35:51.269230" elapsed="0.001395"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:09.062917" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/after_registration_20250420_210108.png"&gt;&lt;img src="screenshots/after_registration_20250420_210108.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:35:51.716476" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/after_registration_20250420_213551.png"&gt;&lt;img src="screenshots/after_registration_20250420_213551.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-04-20T21:01:08.747978" elapsed="0.315116"/>
+<status status="PASS" start="2025-04-20T21:35:51.271006" elapsed="0.445648"/>
 </kw>
 <arg>after_registration</arg>
-<status status="PASS" start="2025-04-20T21:01:08.747211" elapsed="0.316074"/>
+<status status="PASS" start="2025-04-20T21:35:51.268655" elapsed="0.448180"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:09.063968" level="INFO">Clicking element '//*[@id="start-learning-btn"]'.</msg>
+<msg time="2025-04-20T21:35:51.717701" level="INFO">Clicking element '//*[@id="start-learning-btn"]'.</msg>
 <arg>//*[@id="start-learning-btn"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:09.063640" elapsed="0.069866"/>
+<status status="PASS" start="2025-04-20T21:35:51.717250" elapsed="0.073284"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:10.135201" level="INFO">Slept 1 second.</msg>
+<msg time="2025-04-20T21:35:52.847700" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:09.133872" elapsed="1.001623"/>
+<status status="PASS" start="2025-04-20T21:35:51.790939" elapsed="1.057168"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-04-20T21:01:10.136889" level="INFO">${timestamp} = 20250420_210110</msg>
+<msg time="2025-04-20T21:35:52.870112" level="INFO">${timestamp} = 20250420_213552</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-04-20T21:01:10.136486" elapsed="0.000481"/>
+<status status="PASS" start="2025-04-20T21:35:52.856747" elapsed="0.013473"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:10.523619" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/start_learning_20250420_210110.png"&gt;&lt;img src="screenshots/start_learning_20250420_210110.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:35:53.323537" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/start_learning_20250420_213552.png"&gt;&lt;img src="screenshots/start_learning_20250420_213552.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-04-20T21:01:10.137352" elapsed="0.386606"/>
+<status status="PASS" start="2025-04-20T21:35:52.870491" elapsed="0.453724"/>
 </kw>
 <arg>start_learning</arg>
-<status status="PASS" start="2025-04-20T21:01:10.136135" elapsed="0.387948"/>
+<status status="PASS" start="2025-04-20T21:35:52.848952" elapsed="0.475446"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:10.525130" level="INFO">Clicking element 'css:.swal2-confirm'.</msg>
+<msg time="2025-04-20T21:35:53.325245" level="INFO">Clicking element 'css:.swal2-confirm'.</msg>
 <arg>css:.swal2-confirm</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:10.524323" elapsed="0.068289"/>
+<status status="PASS" start="2025-04-20T21:35:53.324819" elapsed="0.073360"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:11.594534" level="INFO">Slept 1 second.</msg>
+<msg time="2025-04-20T21:35:54.400095" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:10.592936" elapsed="1.001811"/>
+<status status="PASS" start="2025-04-20T21:35:53.398889" elapsed="1.001442"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-04-20T21:01:11.596319" level="INFO">${timestamp} = 20250420_210111</msg>
+<msg time="2025-04-20T21:35:54.401535" level="INFO">${timestamp} = 20250420_213554</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-04-20T21:01:11.596060" elapsed="0.000300"/>
+<status status="PASS" start="2025-04-20T21:35:54.401183" elapsed="0.000434"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:11.941743" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/after_start_learning_20250420_210111.png"&gt;&lt;img src="screenshots/after_start_learning_20250420_210111.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:35:54.837955" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/after_start_learning_20250420_213554.png"&gt;&lt;img src="screenshots/after_start_learning_20250420_213554.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-04-20T21:01:11.596554" elapsed="0.345332"/>
+<status status="PASS" start="2025-04-20T21:35:54.402202" elapsed="0.435933"/>
 </kw>
 <arg>after_start_learning</arg>
-<status status="PASS" start="2025-04-20T21:01:11.595354" elapsed="0.346653"/>
+<status status="PASS" start="2025-04-20T21:35:54.400703" elapsed="0.437562"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:11.942478" level="INFO">Clicking element '//*[@id="cancel-enrollment-btn"]'.</msg>
+<msg time="2025-04-20T21:35:54.839188" level="INFO">Clicking element '//*[@id="cancel-enrollment-btn"]'.</msg>
 <arg>//*[@id="cancel-enrollment-btn"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:11.942236" elapsed="0.104591"/>
+<status status="PASS" start="2025-04-20T21:35:54.838534" elapsed="0.125705"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:13.047650" level="INFO">Slept 1 second.</msg>
+<msg time="2025-04-20T21:35:55.965703" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:12.047215" elapsed="1.000550"/>
+<status status="PASS" start="2025-04-20T21:35:54.964568" elapsed="1.001354"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-04-20T21:01:13.048851" level="INFO">${timestamp} = 20250420_210113</msg>
+<msg time="2025-04-20T21:35:55.966855" level="INFO">${timestamp} = 20250420_213555</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-04-20T21:01:13.048494" elapsed="0.000395"/>
+<status status="PASS" start="2025-04-20T21:35:55.966602" elapsed="0.000294"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:13.400947" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/cancel_enrollment_20250420_210113.png"&gt;&lt;img src="screenshots/cancel_enrollment_20250420_210113.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:35:56.354383" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/cancel_enrollment_20250420_213555.png"&gt;&lt;img src="screenshots/cancel_enrollment_20250420_213555.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-04-20T21:01:13.049033" elapsed="0.352023"/>
+<status status="PASS" start="2025-04-20T21:35:55.967042" elapsed="0.387530"/>
 </kw>
 <arg>cancel_enrollment</arg>
-<status status="PASS" start="2025-04-20T21:01:13.048037" elapsed="0.353157"/>
+<status status="PASS" start="2025-04-20T21:35:55.966229" elapsed="0.388460"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:13.401727" level="INFO">Clicking element 'css:.swal2-confirm'.</msg>
+<msg time="2025-04-20T21:35:56.355224" level="INFO">Clicking element 'css:.swal2-confirm'.</msg>
 <arg>css:.swal2-confirm</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:13.401420" elapsed="0.065521"/>
+<status status="PASS" start="2025-04-20T21:35:56.354947" elapsed="0.076529"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:14.468618" level="INFO">Slept 1 second.</msg>
+<msg time="2025-04-20T21:35:57.432357" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:13.467413" elapsed="1.001404"/>
+<status status="PASS" start="2025-04-20T21:35:56.431871" elapsed="1.000685"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-04-20T21:01:14.470922" level="INFO">${timestamp} = 20250420_210114</msg>
+<msg time="2025-04-20T21:35:57.434160" level="INFO">${timestamp} = 20250420_213557</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-04-20T21:01:14.470489" elapsed="0.000529"/>
+<status status="PASS" start="2025-04-20T21:35:57.433545" elapsed="0.000691"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:15.043510" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/after_success_20250420_210114.png"&gt;&lt;img src="screenshots/after_success_20250420_210114.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:35:57.837464" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/after_success_20250420_213557.png"&gt;&lt;img src="screenshots/after_success_20250420_213557.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-04-20T21:01:14.471264" elapsed="0.572405"/>
+<status status="PASS" start="2025-04-20T21:35:57.434417" elapsed="0.403220"/>
 </kw>
 <arg>after_success</arg>
-<status status="PASS" start="2025-04-20T21:01:14.469973" elapsed="0.573873"/>
+<status status="PASS" start="2025-04-20T21:35:57.432974" elapsed="0.404842"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:.swal2-confirm</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-04-20T21:01:15.044259" elapsed="0.026264"/>
+<status status="PASS" start="2025-04-20T21:35:57.838255" elapsed="0.019144"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:15.072810" level="INFO">Executing JavaScript:
+<msg time="2025-04-20T21:35:57.858516" level="INFO">Executing JavaScript:
 document.querySelector('.swal2-confirm').click();
 Without any arguments.</msg>
 <arg>document.querySelector('.swal2-confirm').click();</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-04-20T21:01:15.070913" elapsed="0.014420"/>
+<status status="PASS" start="2025-04-20T21:35:57.857725" elapsed="0.011347"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:17.087180" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-04-20T21:35:59.869802" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:15.085752" elapsed="2.001649"/>
+<status status="PASS" start="2025-04-20T21:35:57.869388" elapsed="2.000574"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
 <arg>css:.swal2-container</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2025-04-20T21:01:17.088062" elapsed="0.010783"/>
+<status status="PASS" start="2025-04-20T21:35:59.870284" elapsed="0.012011"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:18.101632" level="INFO">Slept 1 second.</msg>
+<msg time="2025-04-20T21:36:00.884181" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:17.099119" elapsed="1.002862"/>
+<status status="PASS" start="2025-04-20T21:35:59.882848" elapsed="1.001475"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:18.102483" level="INFO">Clicking element 'css:#user-menu-btn'.</msg>
+<msg time="2025-04-20T21:36:00.885715" level="INFO">Clicking element 'css:#user-menu-btn'.</msg>
 <arg>css:#user-menu-btn</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:18.102229" elapsed="0.202677"/>
+<status status="PASS" start="2025-04-20T21:36:00.885372" elapsed="0.121969"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:19.305643" level="INFO">Slept 1 second.</msg>
+<msg time="2025-04-20T21:36:02.009917" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:18.305146" elapsed="1.000646"/>
+<status status="PASS" start="2025-04-20T21:36:01.009411" elapsed="1.000797"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-04-20T21:01:19.307345" level="INFO">${timestamp} = 20250420_210119</msg>
+<msg time="2025-04-20T21:36:02.012041" level="INFO">${timestamp} = 20250420_213602</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-04-20T21:01:19.306382" elapsed="0.001051"/>
+<status status="PASS" start="2025-04-20T21:36:02.011437" elapsed="0.000651"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:19.686628" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/user_section_20250420_210119.png"&gt;&lt;img src="screenshots/user_section_20250420_210119.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:36:02.425656" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/user_section_20250420_213602.png"&gt;&lt;img src="screenshots/user_section_20250420_213602.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-04-20T21:01:19.308005" elapsed="0.379459"/>
+<status status="PASS" start="2025-04-20T21:36:02.012302" elapsed="0.414229"/>
 </kw>
 <arg>user_section</arg>
-<status status="PASS" start="2025-04-20T21:01:19.306066" elapsed="0.381527"/>
+<status status="PASS" start="2025-04-20T21:36:02.010795" elapsed="0.416079"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:19.688277" level="INFO">Clicking element '//*[@id="profile-btn"]'.</msg>
+<msg time="2025-04-20T21:36:02.427894" level="INFO">Clicking element '//*[@id="profile-btn"]'.</msg>
 <arg>//*[@id="profile-btn"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:19.687951" elapsed="0.178577"/>
+<status status="PASS" start="2025-04-20T21:36:02.427383" elapsed="0.216690"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:22.868327" level="INFO">Slept 3 seconds.</msg>
+<msg time="2025-04-20T21:36:05.649457" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:19.866993" elapsed="3.002001"/>
+<status status="PASS" start="2025-04-20T21:36:02.644687" elapsed="3.004890"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-04-20T21:01:22.870193" level="INFO">${timestamp} = 20250420_210122</msg>
+<msg time="2025-04-20T21:36:05.650464" level="INFO">${timestamp} = 20250420_213605</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-04-20T21:01:22.869890" elapsed="0.000345"/>
+<status status="PASS" start="2025-04-20T21:36:05.650235" elapsed="0.000268"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:23.242762" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/profile_20250420_210122.png"&gt;&lt;img src="screenshots/profile_20250420_210122.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:36:06.104151" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/profile_20250420_213605.png"&gt;&lt;img src="screenshots/profile_20250420_213605.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-04-20T21:01:22.870390" elapsed="0.372484"/>
+<status status="PASS" start="2025-04-20T21:36:05.650645" elapsed="0.453667"/>
 </kw>
 <arg>profile</arg>
-<status status="PASS" start="2025-04-20T21:01:22.869415" elapsed="0.373577"/>
+<status status="PASS" start="2025-04-20T21:36:05.649902" elapsed="0.455402"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:23.243523" level="INFO">Clicking element '//*[@id="my-courses-link"]'.</msg>
+<msg time="2025-04-20T21:36:06.105922" level="INFO">Clicking element '//*[@id="my-courses-link"]'.</msg>
 <arg>//*[@id="my-courses-link"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:23.243274" elapsed="0.182499"/>
+<status status="PASS" start="2025-04-20T21:36:06.105626" elapsed="0.111286"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:26.429242" level="INFO">Slept 3 seconds.</msg>
+<msg time="2025-04-20T21:36:09.218843" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:23.427339" elapsed="3.002086"/>
+<status status="PASS" start="2025-04-20T21:36:06.217737" elapsed="3.001260"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-04-20T21:01:26.430925" level="INFO">${timestamp} = 20250420_210126</msg>
+<msg time="2025-04-20T21:36:09.220091" level="INFO">${timestamp} = 20250420_213609</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-04-20T21:01:26.430096" elapsed="0.000885"/>
+<status status="PASS" start="2025-04-20T21:36:09.219752" elapsed="0.000394"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:26.971715" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/my_courses_20250420_210126.png"&gt;&lt;img src="screenshots/my_courses_20250420_210126.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:36:09.629963" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/my_courses_20250420_213609.png"&gt;&lt;img src="screenshots/my_courses_20250420_213609.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-04-20T21:01:26.431200" elapsed="0.540690"/>
+<status status="PASS" start="2025-04-20T21:36:09.220391" elapsed="0.409691"/>
 </kw>
 <arg>my_courses</arg>
-<status status="PASS" start="2025-04-20T21:01:26.429778" elapsed="0.542393"/>
+<status status="PASS" start="2025-04-20T21:36:09.219316" elapsed="0.410887"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:26.973049" level="INFO">Clicking element '//*[@id="close-history-btn"]'.</msg>
+<msg time="2025-04-20T21:36:09.631032" level="INFO">Clicking element '//*[@id="close-history-btn"]'.</msg>
 <arg>//*[@id="close-history-btn"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:26.972616" elapsed="0.103848"/>
+<status status="PASS" start="2025-04-20T21:36:09.630729" elapsed="0.094333"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:27.077460" level="INFO">Clicking element '//*[@id="user-nav-schedule"]'.</msg>
+<msg time="2025-04-20T21:36:09.725710" level="INFO">Clicking element '//*[@id="user-nav-schedule"]'.</msg>
 <arg>//*[@id="user-nav-schedule"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:27.077082" elapsed="0.120787"/>
+<status status="PASS" start="2025-04-20T21:36:09.725409" elapsed="0.078857"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:30.201516" level="INFO">Slept 3 seconds.</msg>
+<msg time="2025-04-20T21:36:12.805241" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:27.198316" elapsed="3.003622"/>
+<status status="PASS" start="2025-04-20T21:36:09.804647" elapsed="3.000770"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-04-20T21:01:30.204153" level="INFO">${timestamp} = 20250420_210130</msg>
+<msg time="2025-04-20T21:36:12.806541" level="INFO">${timestamp} = 20250420_213612</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-04-20T21:01:30.203568" elapsed="0.000679"/>
+<status status="PASS" start="2025-04-20T21:36:12.806315" elapsed="0.000274"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:30.621803" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/schedule_20250420_210130.png"&gt;&lt;img src="screenshots/schedule_20250420_210130.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:36:13.104200" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/schedule_20250420_213612.png"&gt;&lt;img src="screenshots/schedule_20250420_213612.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-04-20T21:01:30.204572" elapsed="0.417347"/>
+<status status="PASS" start="2025-04-20T21:36:12.806717" elapsed="0.297723"/>
 </kw>
 <arg>schedule</arg>
-<status status="PASS" start="2025-04-20T21:01:30.202698" elapsed="0.419329"/>
+<status status="PASS" start="2025-04-20T21:36:12.805818" elapsed="0.298747"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:30.622448" level="INFO">Clicking element '//*[@id="start-course-btn-0"]'.</msg>
+<msg time="2025-04-20T21:36:13.105165" level="INFO">Clicking element '//*[@id="start-course-btn-0"]'.</msg>
 <arg>//*[@id="start-course-btn-0"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:30.622239" elapsed="0.061439"/>
+<status status="PASS" start="2025-04-20T21:36:13.104872" elapsed="0.046833"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:32.684236" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-04-20T21:36:15.152830" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:30.683965" elapsed="2.000411"/>
+<status status="PASS" start="2025-04-20T21:36:13.152065" elapsed="2.000980"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-04-20T21:01:32.688672" level="INFO">${timestamp} = 20250420_210132</msg>
+<msg time="2025-04-20T21:36:15.154661" level="INFO">${timestamp} = 20250420_213615</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-04-20T21:01:32.685068" elapsed="0.003647"/>
+<status status="PASS" start="2025-04-20T21:36:15.154215" elapsed="0.000517"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:32.991704" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/start_course_20250420_210132.png"&gt;&lt;img src="screenshots/start_course_20250420_210132.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:36:15.450335" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/start_course_20250420_213615.png"&gt;&lt;img src="screenshots/start_course_20250420_213615.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-04-20T21:01:32.688864" elapsed="0.302953"/>
+<status status="PASS" start="2025-04-20T21:36:15.154986" elapsed="0.295448"/>
 </kw>
 <arg>start_course</arg>
-<status status="PASS" start="2025-04-20T21:01:32.684701" elapsed="0.307239"/>
+<status status="PASS" start="2025-04-20T21:36:15.153612" elapsed="0.296915"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:32.994193" level="INFO">Clicking element 'css:.swal2-confirm'.</msg>
+<msg time="2025-04-20T21:36:15.450982" level="INFO">Clicking element 'css:.swal2-confirm'.</msg>
 <arg>css:.swal2-confirm</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:32.993997" elapsed="0.056251"/>
+<status status="PASS" start="2025-04-20T21:36:15.450746" elapsed="0.041981"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:33.050848" level="INFO">Clicking element '//*[@id="user-section"]'.</msg>
+<msg time="2025-04-20T21:36:15.493213" level="INFO">Clicking element '//*[@id="user-section"]'.</msg>
 <arg>//*[@id="user-section"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:33.050618" elapsed="0.232145"/>
+<status status="PASS" start="2025-04-20T21:36:15.492998" elapsed="0.214495"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:35.283514" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-04-20T21:36:17.708354" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:33.283098" elapsed="2.000632"/>
+<status status="PASS" start="2025-04-20T21:36:15.707718" elapsed="2.000789"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-04-20T21:01:35.287936" level="INFO">${timestamp} = 20250420_210135</msg>
+<msg time="2025-04-20T21:36:17.710245" level="INFO">${timestamp} = 20250420_213617</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-04-20T21:01:35.285824" elapsed="0.002204"/>
+<status status="PASS" start="2025-04-20T21:36:17.709839" elapsed="0.000461"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:35.570724" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/before_password_change_20250420_210135.png"&gt;&lt;img src="screenshots/before_password_change_20250420_210135.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:36:18.086518" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/before_password_change_20250420_213617.png"&gt;&lt;img src="screenshots/before_password_change_20250420_213617.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-04-20T21:01:35.288353" elapsed="0.282476"/>
+<status status="PASS" start="2025-04-20T21:36:17.710494" elapsed="0.376139"/>
 </kw>
 <arg>before_password_change</arg>
-<status status="PASS" start="2025-04-20T21:01:35.284270" elapsed="0.286657"/>
+<status status="PASS" start="2025-04-20T21:36:17.708863" elapsed="0.377877"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:35.572034" level="INFO">Clicking element '//*[@id="change-password-btn"]'.</msg>
+<msg time="2025-04-20T21:36:18.087272" level="INFO">Clicking element '//*[@id="change-password-btn"]'.</msg>
 <arg>//*[@id="change-password-btn"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:35.571122" elapsed="0.086120"/>
+<status status="PASS" start="2025-04-20T21:36:18.086982" elapsed="0.196685"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:35.658857" level="INFO">Typing text '1329900959999' into text field '//*[@id="swal-old-password"]'.</msg>
+<msg time="2025-04-20T21:36:18.286058" level="INFO">Typing text '0966566414' into text field '//*[@id="swal-old-password"]'.</msg>
 <arg>//*[@id="swal-old-password"]</arg>
-<arg>1329900959999</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:35.657998" elapsed="0.234875"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:35.893783" level="INFO">Typing text '0966566414' into text field '//*[@id="swal-new-password"]'.</msg>
-<arg>//*[@id="swal-new-password"]</arg>
 <arg>0966566414</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:35.893429" elapsed="0.103015"/>
+<status status="PASS" start="2025-04-20T21:36:18.285710" elapsed="0.122496"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-20T21:36:18.409168" level="INFO">Typing text '0966566411' into text field '//*[@id="swal-new-password"]'.</msg>
+<arg>//*[@id="swal-new-password"]</arg>
+<arg>0966566411</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-20T21:36:18.408858" elapsed="0.091924"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:40.997904" level="INFO">Slept 5 seconds.</msg>
+<msg time="2025-04-20T21:36:23.503049" level="INFO">Slept 5 seconds.</msg>
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:35.996923" elapsed="5.001170"/>
+<status status="PASS" start="2025-04-20T21:36:18.501160" elapsed="5.002077"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-04-20T21:01:41.005282" level="INFO">${timestamp} = 20250420_210141</msg>
+<msg time="2025-04-20T21:36:23.504496" level="INFO">${timestamp} = 20250420_213623</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-04-20T21:01:41.002820" elapsed="0.002536"/>
+<status status="PASS" start="2025-04-20T21:36:23.504128" elapsed="0.000415"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:41.291223" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/password_change_20250420_210141.png"&gt;&lt;img src="screenshots/password_change_20250420_210141.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:36:23.831395" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/password_change_20250420_213623.png"&gt;&lt;img src="screenshots/password_change_20250420_213623.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-04-20T21:01:41.005617" elapsed="0.285716"/>
+<status status="PASS" start="2025-04-20T21:36:23.504714" elapsed="0.326785"/>
 </kw>
 <arg>password_change</arg>
-<status status="PASS" start="2025-04-20T21:01:40.998530" elapsed="0.292903"/>
+<status status="PASS" start="2025-04-20T21:36:23.503594" elapsed="0.328003"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:41.292681" level="INFO">Clicking element 'css:.swal2-confirm'.</msg>
+<msg time="2025-04-20T21:36:23.831957" level="INFO">Clicking element 'css:.swal2-confirm'.</msg>
 <arg>css:.swal2-confirm</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:41.292477" elapsed="0.045908"/>
+<status status="PASS" start="2025-04-20T21:36:23.831793" elapsed="0.045586"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:42.340072" level="INFO">Slept 1 second.</msg>
+<msg time="2025-04-20T21:36:24.879022" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:41.338954" elapsed="1.001330"/>
+<status status="PASS" start="2025-04-20T21:36:23.877732" elapsed="1.001500"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:.swal2-confirm</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-04-20T21:01:42.340966" elapsed="0.016370"/>
+<status status="PASS" start="2025-04-20T21:36:24.879743" elapsed="0.018111"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:42.361170" level="INFO">Executing JavaScript:
+<msg time="2025-04-20T21:36:24.899182" level="INFO">Executing JavaScript:
 document.querySelector('.swal2-confirm').click();
 Without any arguments.</msg>
 <arg>document.querySelector('.swal2-confirm').click();</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-04-20T21:01:42.357700" elapsed="0.015752"/>
+<status status="PASS" start="2025-04-20T21:36:24.898155" elapsed="0.008799"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:44.375224" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-04-20T21:36:26.907900" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:42.373707" elapsed="2.001658"/>
+<status status="PASS" start="2025-04-20T21:36:24.907216" elapsed="2.000854"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
 <arg>css:.swal2-container</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2025-04-20T21:01:44.446135" elapsed="0.043948"/>
+<status status="PASS" start="2025-04-20T21:36:26.908415" elapsed="0.008476"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:45.491054" level="INFO">Slept 1 second.</msg>
+<msg time="2025-04-20T21:36:27.919072" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:44.490421" elapsed="1.000892"/>
+<status status="PASS" start="2025-04-20T21:36:26.917342" elapsed="1.002027"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-04-20T21:01:45.493326" level="INFO">${timestamp} = 20250420_210145</msg>
+<msg time="2025-04-20T21:36:27.921463" level="INFO">${timestamp} = 20250420_213627</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-04-20T21:01:45.492710" elapsed="0.000717"/>
+<status status="PASS" start="2025-04-20T21:36:27.920893" elapsed="0.000672"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:45.769004" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/after_password_change_20250420_210145.png"&gt;&lt;img src="screenshots/after_password_change_20250420_210145.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:36:28.213330" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/after_password_change_20250420_213627.png"&gt;&lt;img src="screenshots/after_password_change_20250420_213627.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-04-20T21:01:45.493803" elapsed="0.275315"/>
+<status status="PASS" start="2025-04-20T21:36:27.921920" elapsed="0.291507"/>
 </kw>
 <arg>after_password_change</arg>
-<status status="PASS" start="2025-04-20T21:01:45.491931" elapsed="0.277326"/>
+<status status="PASS" start="2025-04-20T21:36:27.920091" elapsed="0.293429"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:45.769648" level="INFO">Clicking element 'css:#user-menu-btn'.</msg>
-<arg>css:#user-menu-btn</arg>
+<msg time="2025-04-20T21:36:28.213860" level="INFO">Clicking element '//*[@id="logout-btn"]'.</msg>
+<arg>//*[@id="logout-btn"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-20T21:01:45.769439" elapsed="0.037937"/>
+<status status="PASS" start="2025-04-20T21:36:28.213692" elapsed="0.671414"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-20T21:01:46.809098" level="INFO">Slept 1 second.</msg>
+<msg time="2025-04-20T21:36:29.886038" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-20T21:01:45.807604" elapsed="1.001754"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2025-04-20T21:01:52.231426" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-04-20T21:01:52.238214" level="FAIL">Element 'css:#logout-btn' not visible after 5 seconds.</msg>
-<arg>css:#logout-btn</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2025-04-20T21:01:46.809697" elapsed="5.446659">Element 'css:#logout-btn' not visible after 5 seconds.</status>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>css:#logout-btn</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.256643" elapsed="0.000042"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.256825" elapsed="0.000031"/>
+<status status="PASS" start="2025-04-20T21:36:28.885376" elapsed="1.000932"/>
 </kw>
 <kw name="Capture Step Screenshot">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-04-20T21:36:29.888653" level="INFO">${timestamp} = 20250420_213629</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-04-20T21:36:29.888150" elapsed="0.000579"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-04-20T21:36:30.186715" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/logout_20250420_213629.png"&gt;&lt;img src="screenshots/logout_20250420_213629.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-04-20T21:36:29.889009" elapsed="0.297808"/>
+</kw>
 <arg>logout</arg>
-<status status="NOT RUN" start="2025-04-20T21:01:52.257440" elapsed="0.000036"/>
+<status status="PASS" start="2025-04-20T21:36:29.887447" elapsed="0.299466"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-20T21:36:30.187747" level="INFO">Clicking element '//*[@id="role-btn-admin"]'.</msg>
 <arg>//*[@id="role-btn-admin"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.257630" elapsed="0.000030"/>
+<status status="PASS" start="2025-04-20T21:36:30.187572" elapsed="0.077753"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-20T21:36:30.266240" level="INFO">Typing text 'PhattarapongUknowme@gmail.com' into text field '//*[@id="email-input"]'.</msg>
 <arg>//*[@id="email-input"]</arg>
 <arg>PhattarapongUknowme@gmail.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.257785" elapsed="0.000028"/>
+<status status="PASS" start="2025-04-20T21:36:30.265719" elapsed="0.266908"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-20T21:36:30.533410" level="INFO">Typing text '65041785' into text field '//*[@id="password-input"]'.</msg>
 <arg>//*[@id="password-input"]</arg>
 <arg>65041785</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.257933" elapsed="0.000028"/>
+<status status="PASS" start="2025-04-20T21:36:30.533129" elapsed="0.102086"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-20T21:36:33.636634" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.258078" elapsed="0.000030"/>
+<status status="PASS" start="2025-04-20T21:36:30.635566" elapsed="3.001194"/>
 </kw>
 <kw name="Capture Step Screenshot">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-04-20T21:36:33.637655" level="INFO">${timestamp} = 20250420_213633</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-04-20T21:36:33.637387" elapsed="0.000309"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-04-20T21:36:33.916980" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/admin_login_20250420_213633.png"&gt;&lt;img src="screenshots/admin_login_20250420_213633.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-04-20T21:36:33.637850" elapsed="0.279249"/>
+</kw>
 <arg>admin_login</arg>
-<status status="NOT RUN" start="2025-04-20T21:01:52.258246" elapsed="0.000030"/>
+<status status="PASS" start="2025-04-20T21:36:33.637045" elapsed="0.280168"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-20T21:36:33.917619" level="INFO">Clicking element '//*[@id="login-submit-btn"]'.</msg>
 <arg>//*[@id="login-submit-btn"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.258397" elapsed="0.000028"/>
+<status status="PASS" start="2025-04-20T21:36:33.917418" elapsed="0.072201"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-20T21:36:38.990339" level="INFO">Slept 5 seconds.</msg>
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.258562" elapsed="0.000029"/>
+<status status="PASS" start="2025-04-20T21:36:33.990028" elapsed="5.000509"/>
 </kw>
 <kw name="Capture Step Screenshot">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-04-20T21:36:38.992225" level="INFO">${timestamp} = 20250420_213638</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-04-20T21:36:38.991808" elapsed="0.000490"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-04-20T21:36:39.260933" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/after_admin_login_20250420_213638.png"&gt;&lt;img src="screenshots/after_admin_login_20250420_213638.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${SCREENSHOT_DIR}/${step_name}_${timestamp}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-04-20T21:36:38.992545" elapsed="0.268486"/>
+</kw>
 <arg>after_admin_login</arg>
-<status status="NOT RUN" start="2025-04-20T21:01:52.258729" elapsed="0.000029"/>
+<status status="PASS" start="2025-04-20T21:36:38.991171" elapsed="0.269954"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-20T21:36:39.261456" level="INFO">Clicking element 'css:.swal2-confirm'.</msg>
 <arg>css:.swal2-confirm</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.258899" elapsed="0.000028"/>
+<status status="PASS" start="2025-04-20T21:36:39.261297" elapsed="0.114243"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<arg>//*[@id="course-card-672976dbed0b44b753cafb49"]</arg>
+<msg time="2025-04-20T21:36:39.376548" level="INFO">Clicking element '//*[@id="course-card-6729774aed0b44b753cafb4e"]'.</msg>
+<msg time="2025-04-20T21:36:40.627362" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-20T21:36:40.628157" level="FAIL">Element with locator '//*[@id="course-card-6729774aed0b44b753cafb4e"]' not found.</msg>
+<arg>//*[@id="course-card-6729774aed0b44b753cafb4e"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.259052" elapsed="0.000039"/>
+<status status="FAIL" start="2025-04-20T21:36:39.375958" elapsed="1.273565">Element with locator '//*[@id="course-card-6729774aed0b44b753cafb4e"]' not found.</status>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.259207" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.649844" elapsed="0.000046"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <arg>admin_course_view</arg>
-<status status="NOT RUN" start="2025-04-20T21:01:52.259368" elapsed="0.000029"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.650140" elapsed="0.000037"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>//*[@id="show-participants-btn"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.259518" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.650397" elapsed="0.000038"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.259659" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.650606" elapsed="0.000037"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>//*[@id="check-participant-67dc41d258cdf8f0d4cae527"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.259804" elapsed="0.000041"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.650875" elapsed="0.000065"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.259963" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.651201" elapsed="0.000050"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <arg>participant_check</arg>
-<status status="NOT RUN" start="2025-04-20T21:01:52.260150" elapsed="0.000030"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.651583" elapsed="0.000079"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>//*[@id="save-participants"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.260303" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.651871" elapsed="0.000077"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.260446" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.652149" elapsed="0.000034"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>//*[@id="close-check-name"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.260598" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.652409" elapsed="0.000038"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>//*[@id="nav-courses"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.260745" elapsed="0.000027"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.652652" elapsed="0.000053"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>//*[@id="edit-btn-6729751eed0b44b753cafb3a"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.260897" elapsed="0.000068"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.652907" elapsed="0.000068"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.261130" elapsed="0.000033"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.653203" elapsed="0.000051"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <arg>course_edit</arg>
-<status status="NOT RUN" start="2025-04-20T21:01:52.261330" elapsed="0.000033"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.653640" elapsed="0.000051"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
 <arg>//*[@id="trainingLocation-edit-modal-6729751eed0b44b753cafb3a"]</arg>
 <arg>University</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.261515" elapsed="0.000030"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.653895" elapsed="0.000116"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.261694" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.654425" elapsed="0.000098"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <arg>location_edit</arg>
-<status status="NOT RUN" start="2025-04-20T21:01:52.261867" elapsed="0.000029"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.654822" elapsed="0.000038"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>//*[@id="nav-schedule"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.262016" elapsed="0.000027"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.655027" elapsed="0.000030"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.262153" elapsed="0.000026"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.655174" elapsed="0.000033"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <arg>schedule_view</arg>
-<status status="NOT RUN" start="2025-04-20T21:01:52.262312" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.655396" elapsed="0.000038"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>//*[@id="view-participants-672976dbed0b44b753cafb49"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.262457" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.655578" elapsed="0.000036"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.262597" elapsed="0.000026"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.655735" elapsed="0.000030"/>
 </kw>
 <kw name="Capture Step Screenshot">
 <arg>participants_view</arg>
-<status status="NOT RUN" start="2025-04-20T21:01:52.262771" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.655944" elapsed="0.000046"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>//*[@id="close-check-name"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-04-20T21:01:52.262917" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-04-20T21:36:40.656192" elapsed="0.000041"/>
 </kw>
-<status status="FAIL" start="2025-04-20T21:00:49.748922" elapsed="62.514532">Element 'css:#logout-btn' not visible after 5 seconds.</status>
+<status status="FAIL" start="2025-04-20T21:35:33.872936" elapsed="66.785887">Element with locator '//*[@id="course-card-6729774aed0b44b753cafb4e"]' not found.</status>
 </test>
-<status status="FAIL" start="2025-04-20T21:00:49.165024" elapsed="63.102178"/>
+<status status="FAIL" start="2025-04-20T21:35:33.533504" elapsed="67.127633"/>
 </suite>
 <statistics>
 <total>

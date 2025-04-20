@@ -24,8 +24,8 @@ Test Trader And Admin Flow
     
     # Trader Login
     Click Element    //*[@id="role-btn-trader"]
-    Input Text    //*[@id="email-input"]    phattarapong.phe@spumail.net
-    Input Text    //*[@id="password-input"]    1329900959999
+    Input Text    //*[@id="email-input"]    user@gmail.com
+    Input Text    //*[@id="password-input"]    0966566414
     Sleep    1s
     Capture Step Screenshot    trader_login
     Click Element    //*[@id="login-submit-btn"]
@@ -111,8 +111,8 @@ Test Trader And Admin Flow
     Sleep    2s
     Capture Step Screenshot    before_password_change
     Click Element    //*[@id="change-password-btn"]
-    Input Text    //*[@id="swal-old-password"]    1329900959999
-    Input Text    //*[@id="swal-new-password"]    0966566414
+    Input Text    //*[@id="swal-old-password"]    0966566414
+    Input Text    //*[@id="swal-new-password"]    0966566411
     Sleep    5s
     Capture Step Screenshot    password_change
 
@@ -130,11 +130,8 @@ Test Trader And Admin Flow
     
     Capture Step Screenshot    after_password_change
     
-    # Logout
-    Click Element    css:#user-menu-btn
-    Sleep    1s
-    Wait Until Element Is Visible    css:#logout-btn
-    Click Element    css:#logout-btn
+    # Click logout button
+    Click Element    //*[@id="logout-btn"]
     Sleep    1s
     Capture Step Screenshot    logout
     
@@ -150,7 +147,7 @@ Test Trader And Admin Flow
     Click Element    css:.swal2-confirm
     
     # Admin Course Management
-    Click Element    //*[@id="course-card-672976dbed0b44b753cafb49"]
+    Click Element    //*[@id="course-card-6729774aed0b44b753cafb4e"]
     Sleep    3s
     Capture Step Screenshot    admin_course_view
     Click Element    //*[@id="show-participants-btn"]
