@@ -24,7 +24,7 @@ Test Admin Flow
 
     # Trader Registration
     Click Element    //*[@id="role-btn-trader"]
-    Sleep    3s
+    Sleep    1s
  
     Click Element    //*[@id="signup-btn"]
     Sleep    3s
@@ -38,7 +38,7 @@ Test Admin Flow
     Capture Step Screenshot    trader_register
 
     Click Element    //*[@id="submit-signup-btn"]
-    Sleep    5s
+    Sleep    3s
     Capture Step Screenshot    trader_register_verify
     Click Element    css:.swal2-confirm
     Sleep    3s
@@ -50,7 +50,7 @@ Test Admin Flow
     Capture Step Screenshot    trader_login
 
     Click Element    //*[@id="login-submit-btn"]
-    Sleep    5s
+    Sleep    3s
     Capture Step Screenshot    after_login
     
     # Verify Login Success
@@ -78,7 +78,7 @@ Test Admin Flow
     Sleep    3s
     Capture Step Screenshot    course_selection
     Click Element     //*[@id="register-course-btn"]
-    Sleep    5s
+    Sleep    3s
 
     Capture Step Screenshot    course_registration
     Click Element    css:.swal2-confirm
@@ -87,7 +87,7 @@ Test Admin Flow
     
     # Learning Flow
     Click Element    //*[@id="start-learning-btn"]
-    Sleep    5s
+    Sleep    3s
     Capture Step Screenshot    start_learning
 
     Click Element    css:.swal2-confirm
@@ -96,7 +96,7 @@ Test Admin Flow
     
     # Cancel Enrollment
     Click Element    //*[@id="cancel-enrollment-btn"]
-    Sleep    5s
+    Sleep    3s
     Capture Step Screenshot    cancel_enrollment
     Click Element    css:.swal2-confirm
     Sleep    3s
@@ -113,17 +113,17 @@ Test Admin Flow
     Sleep    3s
 
     Click Element     //*[@id="register-course-btn"]
-    Sleep    5s
+    Sleep    3s
     Capture Step Screenshot    course_registration
     Click Element    css:.swal2-confirm
     Sleep    3s
     
     # Schedule Navigation
     Click Element    //*[@id="user-nav-schedule"]
-    Sleep    5s
+    Sleep    3s
     Capture Step Screenshot    schedule
     Click Element    //*[@id="start-course-btn-0"]
-    Sleep    5s
+    Sleep    3s
     Capture Step Screenshot    start_course
     Click Element    css:.swal2-confirm
     Sleep    3s
